@@ -1,17 +1,137 @@
 ---
+import MainLayout from '../layouts/MainLayout.astro';
+import { readFile, readdir } from 'node:fs/promises';
+import { marked } from 'marked';
+import matter from 'gray-matter';
+import path from 'node:path';
 
+// Helper to read all markdown files from a directory recursively
+async function readContentDir(dir: string, basePath: string = ''): Promise<Record<string, string>> {
+    const entries = await readdir(dir, { withFileTypes: true });
+    const content: Record<string, string> = {};
+
+    for (const entry of entries) {
+        const fullPath = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+            const subContent = await readContentDir(fullPath, path.join(basePath, entry.name));
+            Object.assign(content, subContent);
+        } else if (entry.name.endsWith('.md')) {
+            const key = path.join(basePath, entry.name.replace('.md', ''));
+            const md = await readFile(fullPath, 'utf-8');
+            const { content: body } = matter(md);
+            content[key] = await marked(body);
+        }
+    }
+    return content;
+}
+
+// Transform @links to data-content attributes, external links to target="_blank"
+function transformLinks(html: string): string {
+    return html
+        // Transform @key links to data-content
+        .replace(/<a href="@([^"]+)">/g, '<a href="#" data-content="$1">')
+        // Add target="_blank" to external links
+        .replace(/<a href="(https?:\/\/[^"]+)">/g, '<a href="$1" target="_blank" rel="noopener">');
+}
+
+// Read menu content
+const menuMd = await readFile('src/content/menu.md', 'utf-8');
+const menuHtml = marked(menuMd);
+
+// Read default content
+const defaultMd = await readFile('src/content/default.md', 'utf-8');
+const defaultHtml = marked(defaultMd);
+
+// Read all content files for the right panel
+const dynamicContent = await readContentDir('src/content');
+
+// Read and parse all week files
+const weekFiles = await readdir('src/content/weeks');
+const weeks = await Promise.all(
+    weekFiles
+        .filter(f => f.endsWith('.md'))
+        .map(async (filename) => {
+            const content = await readFile(`src/content/weeks/${filename}`, 'utf-8');
+            const { data, content: body } = matter(content);
+
+            // Extract Content and Due sections from the markdown body
+            const contentMatch = body.match(/## Content\s*([\s\S]*?)(?=## Due|$)/);
+            const dueMatch = body.match(/## Due\s*([\s\S]*?)$/);
+
+            const contentHtml = contentMatch ? transformLinks(await marked(contentMatch[1].trim())) : '';
+            const dueHtml = dueMatch ? transformLinks(await marked(dueMatch[1].trim())) : '';
+
+            return {
+                ...data,
+                contentHtml,
+                dueHtml,
+                filename
+            };
+        })
+);
+
+// Sort by order
+weeks.sort((a, b) => a.order - b.order);
+
+// Serialize content for client-side use
+const contentJson = JSON.stringify(dynamicContent);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+    <div slot="left">
+        <Fragment set:html={menuHtml} />
+
+        <h2>Schedule</h2>
+        <div class="schedule-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Date</th>
+                        <th>Content</th>
+                        <th>Due</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {weeks.map(week => (
+                        <tr class={week.week === 'BREAK' ? 'break-row' : ''}>
+                            <td>{week.week}</td>
+                            <td>{week.date}</td>
+                            <td>
+                                {week.theme && week.theme !== 'BREAK' && <span class="theme-title">{week.theme}</span>}
+                                <Fragment set:html={week.contentHtml} />
+                            </td>
+                            <td set:html={week.dueHtml}></td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div slot="right">
+        <div id="content-display" set:html={defaultHtml}></div>
+    </div>
+
+    <script id="content-data" type="application/json" set:html={contentJson}></script>
+
+    <script is:inline>
+        const contentData = document.getElementById('content-data');
+        const dynamicContent = JSON.parse(contentData.textContent);
+
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('[data-content]');
+            if (!link) return;
+
+            e.preventDefault();
+            const contentKey = link.dataset.content;
+            const contentArea = document.getElementById('content-display');
+
+            if (dynamicContent[contentKey]) {
+                contentArea.innerHTML = dynamicContent[contentKey];
+            } else {
+                contentArea.innerHTML = `<p>Content not found: ${contentKey}</p>`;
+            }
+        });
+    </script>
+</MainLayout>

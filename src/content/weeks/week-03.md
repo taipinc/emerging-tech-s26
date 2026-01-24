@@ -1,0 +1,16 @@
+---
+order: 3
+week: 3
+date: 2/9
+theme: Operational Images (Input Layer)
+---
+
+## Content
+
+- Lecture: Images and Machine Intelligence
+- Workshop: Hugging Face
+- [Assignment 2: Hugging Face Report](@assignments/assignment2)
+
+## Due
+
+[Reading 1](@assignments/reading1)

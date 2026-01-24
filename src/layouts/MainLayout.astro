@@ -1,0 +1,22 @@
+---
+import '../styles/global.css';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Syllabus</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column">
+            <slot name="left" />
+        </div>
+        <div class="right-column">
+            <slot name="right" />
+        </div>
+    </div>
+    <slot />
+</body>
+</html>
