@@ -135,6 +135,8 @@ const contentJson = JSON.stringify(dynamicContent);
             } else {
                 contentArea.innerHTML = `<p>Content not found: ${contentKey}</p>`;
             }
+            // Scroll right panel to top
+            document.querySelector('.right-column').scrollTop = 0;
         }
 
         // Handle click on content links
