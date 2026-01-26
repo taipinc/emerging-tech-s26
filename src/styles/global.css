@@ -8,6 +8,7 @@ body {
 	height: 100vh;
 	overflow: hidden;
 	font-size: 1.2rem;
+	line-height: 1.5;
 }
 .container {
 	display: flex;
@@ -88,7 +89,8 @@ body {
 	padding: 2rem;
 	padding-bottom: 4rem;
 	display: flex;
-	justify-content: center;
+	justify-content: left;
+	align-items: flex-start;
 }
 #content-display {
 	width: 100%;
