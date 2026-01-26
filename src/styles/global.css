@@ -93,7 +93,7 @@ body {
 #content-display {
 	width: 100%;
 	max-width: calc(50vw - 4rem);
-	padding-bottom: 4rem;
+	padding-bottom: 8rem;
 }
 
 /* Hero page with background image */
