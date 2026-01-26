@@ -12,12 +12,30 @@ import '../styles/global.css';
 <body>
     <div class="container">
         <div class="left-column">
-            <slot name="left" />
+            <button class="collapse-btn" aria-label="Collapse menu">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M10 12L6 8l4-4v8z"/>
+                </svg>
+            </button>
+            <div class="left-content">
+                <slot name="left" />
+            </div>
+            <div class="left-collapsed">
+                <span>PSAM 2802 / Photo Processes: Emerging Technologies / Spring 2026</span>
+            </div>
         </div>
         <div class="right-column">
             <slot name="right" />
         </div>
     </div>
+    <script is:inline>
+        const container = document.querySelector('.container');
+        const collapseBtn = document.querySelector('.collapse-btn');
+
+        collapseBtn.addEventListener('click', () => {
+            container.classList.toggle('menu-collapsed');
+        });
+    </script>
     <slot />
 </body>
 </html>

@@ -141,18 +141,36 @@ const contentJson = JSON.stringify(dynamicContent);
             e.preventDefault();
             const contentKey = link.dataset.content;
             window.location.hash = contentKey;
+
+            // On mobile, collapse menu when clicking internal links
+            if (window.matchMedia('(max-width: 768px)').matches) {
+                document.querySelector('.container').classList.add('menu-collapsed');
+            }
         });
 
         // Handle hash changes (back/forward buttons)
         window.addEventListener('hashchange', () => {
             const contentKey = window.location.hash.slice(1);
             loadContent(contentKey);
+            // On mobile, toggle menu based on hash presence
+            if (window.matchMedia('(max-width: 768px)').matches) {
+                const container = document.querySelector('.container');
+                if (contentKey) {
+                    container.classList.add('menu-collapsed');
+                } else {
+                    container.classList.remove('menu-collapsed');
+                }
+            }
         });
 
         // Load content from URL on page load
         if (window.location.hash) {
             const contentKey = window.location.hash.slice(1);
             loadContent(contentKey);
+            // On mobile, show content (collapse menu) if there's a hash
+            if (window.matchMedia('(max-width: 768px)').matches) {
+                document.querySelector('.container').classList.add('menu-collapsed');
+            }
         }
     </script>
 </MainLayout>
