@@ -43,7 +43,7 @@ const menuHtml = marked(menuMd);
 // Read default content with frontmatter support
 const defaultMd = await readFile('src/content/default.md', 'utf-8');
 const { data: defaultData, content: defaultBody } = matter(defaultMd);
-const defaultContentHtml = await marked(defaultBody);
+const defaultContentHtml = transformLinks(await marked(defaultBody));
 const defaultHtml = defaultData.image
     ? `<div class="hero-page" style="background-image: url('${defaultData.image}')"><div class="hero-content">${defaultContentHtml}</div></div>`
     : defaultContentHtml;
