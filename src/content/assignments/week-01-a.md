@@ -1,6 +1,6 @@
 # Hello Emerging Techs!
 
-Sorry we have to meet under these circumstances. I hope you keep warm.
+Sorry we have to meet in these circumstances. I hope you keep warm.
 
 My name is Shabtai Pinchevsky, and I'll be your professor for this <u>Photo Processes: Emerging Technologies course</u>!
 
