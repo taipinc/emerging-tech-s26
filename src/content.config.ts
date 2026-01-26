@@ -9,8 +9,8 @@ const weeks = defineCollection({
 	type: 'content',
 	schema: z.object({
 		order: z.number(),
-		week: z.string(),
-		date: z.string(),
+		week: z.coerce.string(),
+		date: z.coerce.string(),
 		theme: z.string().optional(),
 	}),
 });
