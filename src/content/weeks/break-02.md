@@ -1,10 +1,12 @@
 ---
 order: 8
-week: BREAK
-date: BREAK
-theme: BREAK
+week: '---'
+date: '---'
+theme: 
 ---
 
 ## Content
+
+BREAK
 
 ## Due

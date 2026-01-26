@@ -2,15 +2,14 @@
 order: 3
 week: 3
 date: 2/9
-theme: Operational Images (Input Layer)
+theme: Computational Images
 ---
 
 ## Content
 
-- Lecture: Images and Machine Intelligence
-- Workshop: Hugging Face
-- [Assignment 2: Hugging Face Report](@assignments/assignment2)
+- Lecture: Computational Photography
+- Workshop: Introduction to p5.js
 
 ## Due
 
-[Reading 1](@assignments/reading1)
+[Assignment 1](@assignments/assignment1)

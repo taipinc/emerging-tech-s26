@@ -2,14 +2,10 @@
 order: 1
 week: 1
 date: 1/26
-theme: Computation & Algorithm
+theme: Asynchronous Week
 ---
 
 ## Content
 
-- Introductions
-- Lecture: Computation & Algorithm
-- Workshop: Algorithm - Loops and Conditions
-- [Assignment 1: Procedural Photography for a Classmate](@assignments/assignment1)
-
+[Please follow along on the asynchronous week 01 plan!](@assignments/week-01-a)
 ## Due

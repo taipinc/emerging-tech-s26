@@ -2,14 +2,14 @@
 order: 2
 week: 2
 date: 2/2
-theme: Computational Images
+theme: Computation & Algorithm
 ---
 
 ## Content
 
-- Lecture: Computational Photography
-- Workshop: Introduction to p5.js
+- Introductions
+- Lecture: Computation & Algorithm
+- Workshop: Algorithm - Loops and Conditions
+- [Assignment 1: Procedural Photography for a Classmate](@assignments/assignment1)
 
 ## Due
-
-[Assignment 1](@assignments/assignment1)
