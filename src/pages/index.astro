@@ -19,19 +19,21 @@ async function readContentDir(dir: string, basePath: string = ''): Promise<Recor
             const key = path.join(basePath, entry.name.replace('.md', ''));
             const md = await readFile(fullPath, 'utf-8');
             const { content: body } = matter(md);
-            content[key] = await marked(body);
+            content[key] = transformLinks(await marked(body));
         }
     }
     return content;
 }
 
-// Transform @links to data-content attributes, external links to target="_blank"
+// Transform @links to data-content attributes, external links and files to target="_blank"
 function transformLinks(html: string): string {
     return html
         // Transform @key links to data-content
         .replace(/<a href="@([^"]+)">/g, '<a href="#" data-content="$1">')
         // Add target="_blank" to external links
-        .replace(/<a href="(https?:\/\/[^"]+)">/g, '<a href="$1" target="_blank" rel="noopener">');
+        .replace(/<a href="(https?:\/\/[^"]+)">/g, '<a href="$1" target="_blank" rel="noopener">')
+        // Add target="_blank" to file links (pdf, doc, etc.)
+        .replace(/<a href="([^"]+\.(pdf|doc|docx|xls|xlsx|ppt|pptx|zip))">/gi, '<a href="$1" target="_blank" rel="noopener">');
 }
 
 // Read menu content
@@ -118,20 +120,39 @@ const contentJson = JSON.stringify(dynamicContent);
     <script is:inline>
         const contentData = document.getElementById('content-data');
         const dynamicContent = JSON.parse(contentData.textContent);
+        const contentArea = document.getElementById('content-display');
+        const defaultContent = contentArea.innerHTML;
 
+        function loadContent(contentKey) {
+            if (!contentKey) {
+                contentArea.innerHTML = defaultContent;
+            } else if (dynamicContent[contentKey]) {
+                contentArea.innerHTML = dynamicContent[contentKey];
+            } else {
+                contentArea.innerHTML = `<p>Content not found: ${contentKey}</p>`;
+            }
+        }
+
+        // Handle click on content links
         document.addEventListener('click', (e) => {
             const link = e.target.closest('[data-content]');
             if (!link) return;
 
             e.preventDefault();
             const contentKey = link.dataset.content;
-            const contentArea = document.getElementById('content-display');
-
-            if (dynamicContent[contentKey]) {
-                contentArea.innerHTML = dynamicContent[contentKey];
-            } else {
-                contentArea.innerHTML = `<p>Content not found: ${contentKey}</p>`;
-            }
+            window.location.hash = contentKey;
         });
+
+        // Handle hash changes (back/forward buttons)
+        window.addEventListener('hashchange', () => {
+            const contentKey = window.location.hash.slice(1);
+            loadContent(contentKey);
+        });
+
+        // Load content from URL on page load
+        if (window.location.hash) {
+            const contentKey = window.location.hash.slice(1);
+            loadContent(contentKey);
+        }
     </script>
 </MainLayout>

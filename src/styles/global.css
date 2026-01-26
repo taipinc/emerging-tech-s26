@@ -29,10 +29,20 @@ iframe {
 	height: 100%;
 	border: none;
 }
+a {
+	color: blue;
+}
+a:visited {
+	color: blue;
+}
 a[data-content] {
 	cursor: pointer;
-	color: blue;
 	text-decoration: underline;
+}
+hr {
+	border: none;
+	border-top: 1px solid black;
+	margin: 1.5em 0;
 }
 
 /* Typography spacing */
@@ -90,8 +100,19 @@ ul {
 ul li::before {
 	content: "- ";
 }
-ul ul {
+ol {
 	padding-left: 1.5em;
+}
+ol li {
+	margin-bottom: 0.5em;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+	padding-left: 1.5em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }
 thead,
 tbody,
