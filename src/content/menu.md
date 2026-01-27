@@ -1,8 +1,8 @@
 <h3 class="no-space">PSAM 2802</h3>
 
-  <h1 class="no-space">Photo Processes: Emerging Technologies</h1>
+  <h1 class="no-space site-title">Photo Processes: Emerging Technologies</h1>
 
-  <h2 class="no-space">Spring 2026 / Shabtai Pinchevsky</h2>
+  <h3 class="no-space">Spring 2026 / Shabtai Pinchevsky</h2>
 
 <br>
 

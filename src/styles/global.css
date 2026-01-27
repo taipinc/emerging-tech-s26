@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Geist:wght@100..900&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 body {
-	font-family: system-ui, sans-serif;
+  font-family: "Geist", sans-serif;
 	height: 100vh;
 	overflow: hidden;
 	font-size: 1.2rem;
@@ -70,7 +72,9 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: left 0.3s ease, transform 0.3s ease;
+	transition:
+		left 0.3s ease,
+		transform 0.3s ease;
 }
 .collapse-btn svg {
 	width: 20px;
@@ -113,6 +117,7 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
+	width: auto;
 	max-width: none;
 	padding: 0;
 }
@@ -168,6 +173,7 @@ h5,
 h6 {
 	margin-top: 1.5em;
 	margin-bottom: 0.5em;
+	line-height: 1.2;
 }
 h1:first-child,
 h2:first-child,
@@ -177,6 +183,15 @@ h5:first-child,
 h6:first-child {
 	margin-top: 0;
 }
+
+h1 {
+  font-family: "Freeman", sans-serif;
+}
+
+.site-title {
+	font-size: 2.5em;
+}
+
 p,
 ul,
 ol {
@@ -186,7 +201,8 @@ ol {
 /* No-space utility class */
 .no-space,
 .no-space > * {
-	margin: 0;
+	margin-top: 0em;
+	margin-bottom: 0.1em;
 }
 
 /* Table as CSS Grid */
@@ -257,6 +273,9 @@ th {
 	.left-collapsed {
 		display: none !important;
 	}
+	.collapse-btn {
+		left: 0.5rem;
+	}
 	.menu-collapsed .left-column {
 		margin-left: -100%;
 		border: none;
@@ -274,14 +293,50 @@ th {
 		width: 100%;
 	}
 	#content-display {
+		width: 100%;
 		max-width: 100%;
 	}
+	.menu-collapsed #content-display {
+		margin-left: 0;
+	}
+	/* Mobile schedule table - restructure to 3 rows per week */
+	.schedule-table thead {
+		display: none;
+	}
 	.schedule-table table {
-		grid-template-columns: auto auto 1fr auto;
+		grid-template-columns: 1fr 1fr;
 		font-size: 0.85rem;
 	}
-	th,
-	td {
+	.schedule-table td {
+		border-bottom: none !important;
+		padding: 0.3rem 0.5rem;
+	}
+	/* Week cell - add "Week " prefix */
+	.schedule-table tbody td:nth-child(1)::before {
+		content: 'Week ';
+		font-weight: bold;
+	}
+	/* Content cell - spans full width */
+	.schedule-table tbody td:nth-child(3) {
+		grid-column: 1 / -1;
+	}
+	/* Due cell - spans full width with prominent border */
+	.schedule-table tbody td:nth-child(4) {
+		grid-column: 1 / -1;
+		border-bottom: 1px solid black !important;
+		padding-bottom: 1rem;
+		margin-bottom: 0.5rem;
+	}
+	/* Add "Due:" label when cell has content */
+	.schedule-table tbody td:nth-child(4):not(:empty)::before {
+		content: 'Due: ';
+		font-weight: bold;
+	}
+	/* Break row - don't add "Week " prefix */
+	.schedule-table tbody tr.break-row td:nth-child(1)::before {
+		content: none;
+	}
+	th {
 		padding: 0.3rem 0.5rem;
 	}
 }
