@@ -1,11 +1,22 @@
-# Assignment 2
+# Assignment 2: Hugging Space Report
 
-Write an algorithm, or a set of instructions, for another person to execute and produce … something.
+Explore [Hugging Face Spaces](https://huggingface.co/spaces) to understand the landscape of accessible machine learning tools. Choose 2-3 spaces that interest you photographically or conceptually, experiment with them, and present your findings to the class.
 
-- The instructions should fit 1 hour of duration
-- The instructions can use resources and infrastructure (input), like:
-  - Transportation, elevators, the city’s streets, stores, libraries, etc. 
-- The instructions should use available devices (output), like:
-  - Cellphone’s camera, notebook and pen, computer, etc.
-- Use the logics of algorithms: conditions, loops, and anything you might come up with
-- Important: don’t put anyone at risk, think of the impact of the instructions
+**Explore!**
+
+- Browse Hugging Face Spaces
+- Test at least 5 different spaces
+- Document your experiments (save outputs, take screenshots, note observations)
+
+**Deeper Dive**
+
+Select 3 spaces to investigate more thoroughly. For each, consider:
+- What does it do?
+- What are its inputs/outputs? (What does it need from you? What does it generate?)
+- Where did it succeed?
+- How does it fail? (Push it to its limits - what reveals the system's logic or biases?)
+- Photographic potential? (How might this be used photographically or artistically?)
+
+**Present**
+
+Create a 5-10 minute presentation sharing your findings (showing 2-3 spaces)

@@ -7,7 +7,7 @@ theme: "Virtual Spaces: Explorations"
 
 ## Content
 
-- Lecture: Exploring and Documenting Virtual Workds
+- Lecture: Exploring and Documenting Virtual Worlds
 - Students' presentation on Project 2 plans
 - Workshop: Exploring and recording virtual worlds
 - Workshop: Spline
