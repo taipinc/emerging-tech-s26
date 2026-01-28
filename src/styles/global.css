@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Freeman&family=Geist:wght@100..900&display=swap');
 
+:root {
+	--color-menu: #F0F0F0;
+	--color-menu-hover: #e3e2e8;
+	--color-content: #FFF;
+	--color-schedule: #D7F2FF;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -25,6 +32,7 @@ body {
 	padding-bottom: 4rem;
 	border-right: 1px solid #ddd;
 	transition: margin-left 0.3s ease;
+	background: var(--color-menu);
 }
 .left-content {
 	transition: opacity 0.15s ease;
@@ -46,6 +54,7 @@ body {
 	text-overflow: ellipsis;
 	justify-content: start;
 	z-index: 90;
+	background: var(--color-menu);
 }
 .menu-collapsed .left-column {
 	margin-left: calc(-50% + 3rem);
@@ -64,7 +73,7 @@ body {
 	top: 0.5rem;
 	left: calc(50% - 3rem);
 	z-index: 100;
-	background: white;
+	background: var(--color-menu);
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	cursor: pointer;
@@ -81,7 +90,7 @@ body {
 	height: 20px;
 }
 .collapse-btn:hover {
-	background: #f0f0f0;
+	background: var(--color-menu-hover);
 }
 .menu-collapsed .collapse-btn {
 	left: 1.5rem;
@@ -96,6 +105,7 @@ body {
 	display: flex;
 	justify-content: left;
 	align-items: flex-start;
+	background: var(--color-content);
 }
 #content-display {
 	width: calc(50vw - 4rem);
@@ -130,7 +140,7 @@ body {
 	align-items: flex-end;
 }
 .hero-content {
-	background: white;
+	background: var(--color-content);
 	padding: 2rem;
 	margin: 2rem;
 }
@@ -213,6 +223,8 @@ table {
 }
 .schedule-table table {
 	grid-template-columns: auto auto 1fr auto;
+	background-color: var(--color-schedule);
+	border-top: solid 1px black !important;
 }
 .theme-title {
 	display: inline-block;
@@ -268,7 +280,7 @@ th {
 		min-width: 100%;
 		height: 100%;
 		z-index: 20;
-		background: white;
+		background: var(--color-menu);
 	}
 	.left-collapsed {
 		display: none !important;
@@ -286,7 +298,7 @@ th {
 		left: 0.5rem;
 		right: auto;
 		transform: rotate(180deg);
-		background: white;
+		background: var(--color-menu);
 		border: 1px solid #ccc;
 	}
 	.right-column {
