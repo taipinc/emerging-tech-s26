@@ -13,4 +13,4 @@ theme: Volumetric Photography
 - [Assignment 3: Photogrammetry](@assignments/assignment3)
 
 ## Due
-**Project 1**
+[**Project 1**](@assignments/project1)

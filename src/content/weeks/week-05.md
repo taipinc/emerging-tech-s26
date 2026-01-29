@@ -9,7 +9,7 @@ theme: Generative Images (Output Layer)
 
 - Art & Generative AI?
 - Workshop: p5.js + ml5.js
-- ​​Stating <u>Project 1: Interactive Camera</u>
+- ​​Stating [Project 1: Interactive Camera](@assignments/project1)
 
 ## Due
 

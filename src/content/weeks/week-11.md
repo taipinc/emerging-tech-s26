@@ -13,7 +13,7 @@ theme: Volumetric ML Practices
   - NeRFs and 3DGS
   - Apple SHARP and other depth estimators
   - Bringing it all together in Spline
-- ​​Stating <u>Project 2: Virtual Photographic Spaces</u>
+- ​​Stating [Project 2: Virtual Photographic Spaces](@assignments/project2)
 - [Assignment 4: Remote Investigation](@assignments/assignment4)
 
 
