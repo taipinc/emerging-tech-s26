@@ -12,4 +12,4 @@ theme: Generative AI Project Tools
 
 ## Due
 
-[Project 1 report]((@assignments/project1))
+[Project 1 report](@assignments/project1)
