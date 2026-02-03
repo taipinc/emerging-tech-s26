@@ -8,8 +8,7 @@ theme: Computation & Algorithm
 ## Content
 
 - Introductions
-- Lecture: Computation & Algorithm
-- Workshop: Algorithm - Loops and Conditions
+- [Lecture: Computation & Algorithm](https://taipinc.github.io/my-slides/courses/emerging-tech/s26/w01-computation&algorithm/)
 - [Assignment 1: Procedural Photography for a Classmate](@assignments/assignment1)
 
 ## Due
