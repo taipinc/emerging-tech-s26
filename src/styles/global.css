@@ -168,6 +168,10 @@ a[data-content] {
 	cursor: pointer;
 	text-decoration: underline;
 }
+mark {
+	background-color: #FFEB3B;
+	color: inherit;
+}
 hr {
 	border: none;
 	border-top: 1px solid black;
@@ -236,12 +240,12 @@ table {
 
 /* List styling */
 ul {
-	list-style: none;
+	list-style: circle;
 	padding-left: 0;
 }
-ul li::before {
+/* ul li::before {
 	content: '- ';
-}
+} */
 ol {
 	padding-left: 1.5em;
 }
@@ -252,9 +256,11 @@ ul ul,
 ul ol,
 ol ul,
 ol ol {
-	padding-left: 1.5em;
-	margin-top: 0.5em;
+	margin-left: -0.70em;
+	padding-left: 2.25em;
+	margin-top: 0.0em;
 	margin-bottom: 0.5em;
+	border-left: 1px solid rgba(0, 0, 0, 0.5);
 }
 thead,
 tbody,
