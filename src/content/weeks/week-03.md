@@ -11,6 +11,7 @@ status: future
 - Lecture (cont.): Artists and Procedures
 - Lecture: Computational Photography
 - [Workshop: Introduction to cables.gl](@workshops/workshop-cablesgl01)
+- Assign [Reading 2](@assignments/reading1)
 
 ## Due
 
