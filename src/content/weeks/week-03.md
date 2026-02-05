@@ -7,8 +7,9 @@ theme: Computational Images
 
 ## Content
 
+- Lecture (cont.): Artists and Procedures
 - Lecture: Computational Photography
-- Workshop: Introduction to p5.js
+- [Workshop: Introduction to cables.gl](@workshops/workshop-cablesgl01)
 
 ## Due
 

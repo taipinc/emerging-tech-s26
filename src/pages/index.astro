@@ -50,7 +50,7 @@ function transformLinks(html: string): string {
         // Transform @key links to data-content
         .replace(/<a href="@([^"]+)">/g, '<a href="#" data-content="$1">')
         // Add target="_blank" to external links
-        .replace(/<a href="(https?:\/\/[^"]+)">/g, '<a href="$1" target="_blank" rel="noopener">')
+        .replace(/<a href="(https?:\/\/[^"]+)">/g, '<a href="$1" target="_blank" rel="noopener" class="external-link">')
         // Add target="_blank" to file links (pdf, doc, etc.)
         .replace(/<a href="([^"]+\.(pdf|doc|docx|xls|xlsx|ppt|pptx|zip))">/gi, '<a href="$1" target="_blank" rel="noopener">');
 }

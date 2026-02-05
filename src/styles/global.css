@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Freeman&family=Geist:wght@100..900&display=swap');
 
 :root {
-	--color-menu: #F0F0F0;
+	--color-menu: #f0f0f0;
 	--color-menu-hover: #e3e2e8;
-	--color-content: #FFF;
-	--color-schedule: #D7F2FF;
+	--color-content: #fff;
+	--color-schedule: #d7f2ff;
 }
 
 * {
@@ -13,7 +13,7 @@
 	box-sizing: border-box;
 }
 body {
-  font-family: "Geist", sans-serif;
+	font-family: 'Geist', sans-serif;
 	height: 100vh;
 	overflow: hidden;
 	font-size: 1.2rem;
@@ -153,6 +153,10 @@ body {
 .hero-content *:last-child {
 	margin-bottom: 0;
 }
+img {
+	max-width: 100%;
+	height: auto;
+}
 iframe {
 	width: 100%;
 	height: 100%;
@@ -167,9 +171,21 @@ a:visited {
 a[data-content] {
 	cursor: pointer;
 	text-decoration: underline;
+	/* text-decoration-color: #E8853A; */
+}
+a.external-link::after {
+	content: '';
+	display: inline-block;
+	width: 0.75em;
+	height: 0.75em;
+	margin-left: 0.2em;
+	vertical-align: middle;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='blue' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 mark {
-	background-color: #FFEB3B;
+	background-color: #ffeb3b;
 	color: inherit;
 }
 hr {
@@ -185,6 +201,11 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: 'Bricolage Grotesque', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 800;
+	font-style: normal;
+	font-variation-settings: 'wdth' 100;
 	margin-top: 1.5em;
 	margin-bottom: 0.5em;
 	line-height: 1.2;
@@ -199,7 +220,7 @@ h6:first-child {
 }
 
 h1 {
-  font-family: "Freeman", sans-serif;
+	/* filter: blur(0.5px); */
 }
 
 .site-title {
@@ -216,7 +237,8 @@ ol {
 .no-space,
 .no-space > * {
 	margin-top: 0em;
-	margin-bottom: 0.1em;
+	margin-bottom: 0.2em;
+	line-height: 1;
 }
 
 /* Table as CSS Grid */
@@ -256,9 +278,9 @@ ul ul,
 ul ol,
 ol ul,
 ol ol {
-	margin-left: -0.70em;
+	margin-left: -0.7em;
 	padding-left: 2.25em;
-	margin-top: 0.0em;
+	margin-top: 0em;
 	margin-bottom: 0.5em;
 	border-left: 1px solid rgba(0, 0, 0, 0.5);
 }
