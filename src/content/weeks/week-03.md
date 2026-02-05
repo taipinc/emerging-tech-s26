@@ -3,6 +3,7 @@ order: 3
 week: 3
 date: 2/9
 theme: Computational Images
+status: future
 ---
 
 ## Content

@@ -260,6 +260,17 @@ table {
 	margin-bottom: 0.5em;
 }
 
+/* Row status colors (base: --color-schedule #d7f2ff) */
+tr.row-past td {
+	background-color: var(--color-schedule);
+}
+tr.row-current td {
+	background-color: #D1FFE4;
+}
+tr.row-future td {
+	background-color: var(--color-schedule);
+}
+
 /* List styling */
 ul {
 	list-style: circle;

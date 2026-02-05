@@ -3,6 +3,7 @@ order: 14
 week: 12
 date: 4/27
 theme: "Virtual Spaces: Explorations"
+status: future
 ---
 
 ## Content

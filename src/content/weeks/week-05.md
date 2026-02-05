@@ -3,6 +3,7 @@ order: 6
 week: 5
 date: 3/2
 theme: Generative Images (Output Layer)
+status: future
 ---
 
 ## Content

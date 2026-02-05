@@ -3,6 +3,7 @@ order: 9
 week: 7
 date: 3/23
 theme: Generative AI Project Tools
+status: future
 ---
 
 ## Content

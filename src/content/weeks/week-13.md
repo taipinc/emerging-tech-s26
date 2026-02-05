@@ -3,6 +3,7 @@ order: 15
 week: 13
 date: 5/4
 theme: "Virtual Spaces: Design"
+status: future
 ---
 
 ## Content

@@ -119,7 +119,7 @@ const contentJson = JSON.stringify(dynamicContent);
                 </thead>
                 <tbody>
                     {weeks.map(week => (
-                        <tr class={week.week === 'BREAK' ? 'break-row' : ''}>
+                        <tr class={`${week.week === 'BREAK' ? 'break-row' : ''} row-${week.status || 'future'}`}>
                             <td>{week.week}</td>
                             <td>{week.date}</td>
                             <td>
