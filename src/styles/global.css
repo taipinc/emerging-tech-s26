@@ -1,197 +1,197 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Freeman&family=Geist:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Freeman&family=Geist:wght@100..900&display=swap");
 
 :root {
-	--color-menu: #f0f0f0;
-	--color-menu-hover: #e3e2e8;
-	--color-content: #fff;
-	--color-schedule: #d7f2ff;
+    --color-menu: #f0f0f0;
+    --color-menu-hover: #e3e2e8;
+    --color-content: #fff;
+    --color-schedule: #d7f2ff;
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body {
-	font-family: 'Geist', sans-serif;
-	height: 100vh;
-	overflow: hidden;
-	font-size: 1.2rem;
-	line-height: 1.5;
+    font-family: "Geist", sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 1.2rem;
+    line-height: 1.5;
 }
 .container {
-	display: flex;
-	height: 100vh;
+    display: flex;
+    height: 100vh;
 }
 .left-column {
-	position: relative;
-	width: 50%;
-	min-width: 50%;
-	overflow-y: auto;
-	padding: 2rem;
-	padding-bottom: 4rem;
-	border-right: 1px solid #ddd;
-	transition: margin-left 0.3s ease;
-	background: var(--color-menu);
+    position: relative;
+    width: 50%;
+    min-width: 50%;
+    overflow-y: auto;
+    padding: 2rem;
+    padding-bottom: 4rem;
+    border-right: 1px solid #ddd;
+    transition: margin-left 0.3s ease;
+    background: var(--color-menu);
 }
 .left-content {
-	transition: opacity 0.15s ease;
+    transition: opacity 0.15s ease;
 }
 .left-collapsed {
-	display: none;
-	position: fixed;
-	top: 3rem;
-	left: 0;
-	width: 3rem;
-	height: calc(100% - 3rem);
-	writing-mode: vertical-rl;
-	text-orientation: mixed;
-	padding: 1rem 0;
-	font-size: 1.2rem;
-	font-weight: 600;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	justify-content: start;
-	z-index: 90;
-	background: var(--color-menu);
+    display: none;
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    width: 3rem;
+    height: calc(100% - 3rem);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    justify-content: start;
+    z-index: 90;
+    background: var(--color-menu);
 }
 .menu-collapsed .left-column {
-	margin-left: calc(-50% + 3rem);
-	overflow: hidden;
+    margin-left: calc(-50% + 3rem);
+    overflow: hidden;
 }
 .menu-collapsed .left-content {
-	opacity: 0;
-	pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }
 .menu-collapsed .left-collapsed {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 .collapse-btn {
-	position: fixed;
-	top: 0.5rem;
-	left: calc(50% - 3rem);
-	z-index: 100;
-	background: var(--color-menu);
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	cursor: pointer;
-	padding: 8px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition:
-		left 0.3s ease,
-		transform 0.3s ease;
+    position: fixed;
+    top: 0.5rem;
+    left: calc(50% - 3rem);
+    z-index: 100;
+    background: var(--color-menu);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        left 0.3s ease,
+        transform 0.3s ease;
 }
 .collapse-btn svg {
-	width: 20px;
-	height: 20px;
+    width: 20px;
+    height: 20px;
 }
 .collapse-btn:hover {
-	background: var(--color-menu-hover);
+    background: var(--color-menu-hover);
 }
 .menu-collapsed .collapse-btn {
-	left: 1.5rem;
-	transform: translateX(-50%) rotate(180deg);
-	top: 0.5rem;
+    left: 1.5rem;
+    transform: translateX(-50%) rotate(180deg);
+    top: 0.5rem;
 }
 .right-column {
-	flex: 1;
-	overflow-y: auto;
-	padding: 2rem;
-	padding-bottom: 4rem;
-	display: flex;
-	justify-content: left;
-	align-items: flex-start;
-	background: var(--color-content);
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    background: var(--color-content);
 }
 #content-display {
-	width: calc(50vw - 4rem);
-	padding-bottom: 8rem;
-	transition: margin-left 0.3s ease;
+    width: calc(50vw - 4rem);
+    padding-bottom: 8rem;
+    transition: margin-left 0.3s ease;
 }
 .menu-collapsed #content-display {
-	margin-left: calc(25vw - 1.5rem);
+    margin-left: calc(25vw - 1.5rem);
 }
 
 /* Hero page with background image */
 .right-column:has(.hero-page) {
-	padding: 0;
-	position: relative;
+    padding: 0;
+    position: relative;
 }
 #content-display:has(.hero-page) {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	width: auto;
-	max-width: none;
-	padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    max-width: none;
+    padding: 0;
 }
 .hero-page {
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-position: center;
-	display: flex;
-	align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
 }
 .hero-content {
-	background: var(--color-content);
-	padding: 2rem;
-	margin: 2rem;
+    background: var(--color-content);
+    padding: 2rem;
+    margin: 2rem;
 }
 .hero-content h1,
 .hero-content h2,
 .hero-content h3,
 .hero-content p {
-	margin: 0 0 0.5em 0;
+    margin: 0 0 0.5em 0;
 }
 .hero-content *:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 img {
-	max-width: 100%;
-	height: auto;
+    max-width: 100%;
+    height: auto;
 }
 iframe {
-	width: 100%;
-	min-height: 800px;
-	border: none;
+    width: 100%;
+    min-height: 800px;
+    border: none;
 }
 a {
-	color: blue;
+    color: blue;
 }
 a:visited {
-	color: blue;
+    color: blue;
 }
 a[data-content] {
-	cursor: pointer;
-	text-decoration: underline;
-	/* text-decoration-color: #E8853A; */
+    cursor: pointer;
+    text-decoration: underline;
+    /* text-decoration-color: #E8853A; */
 }
 a.external-link::after {
-	content: '';
-	display: inline-block;
-	width: 0.75em;
-	height: 0.75em;
-	margin-left: 0.2em;
-	vertical-align: middle;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='blue' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
-	background-size: contain;
-	background-repeat: no-repeat;
+    content: "";
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    margin-left: 0.2em;
+    vertical-align: middle;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='blue' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 mark {
-	background-color: #ffeb3b;
-	color: inherit;
+    background-color: #ffeb3b;
+    color: inherit;
 }
 hr {
-	border: none;
-	border-top: 1px solid black;
-	margin: 1.5em 0;
+    border: none;
+    border-top: 1px solid black;
+    margin: 1.5em 0;
 }
 
 /* Typography spacing */
@@ -201,14 +201,14 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Bricolage Grotesque', sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 800;
-	font-style: normal;
-	font-variation-settings: 'wdth' 100;
-	margin-top: 1.5em;
-	margin-bottom: 0.5em;
-	line-height: 1.2;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
 }
 h1:first-child,
 h2:first-child,
@@ -216,178 +216,178 @@ h3:first-child,
 h4:first-child,
 h5:first-child,
 h6:first-child {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 h1 {
-	/* filter: blur(0.5px); */
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 
 .site-title {
-	font-size: 2.5em;
+    font-size: 2.5em;
 }
 
 p,
 ul,
 ol {
-	margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 /* No-space utility class */
 .no-space,
 .no-space > * {
-	margin-top: 0em;
-	margin-bottom: 0.2em;
-	line-height: 1;
+    margin-top: 0em;
+    margin-bottom: 0.2em;
+    line-height: 1;
 }
 
 /* Table as CSS Grid */
 table {
-	display: grid;
-	width: 100%;
-	font-size: 1rem;
+    display: grid;
+    width: 100%;
+    font-size: 1rem;
 }
 .schedule-table table {
-	grid-template-columns: auto auto 1fr auto;
-	background-color: var(--color-schedule);
-	border-top: solid 1px black !important;
+    grid-template-columns: auto auto 1fr auto;
+    background-color: var(--color-schedule);
+    border-top: solid 1px black !important;
 }
 .theme-title {
-	display: inline-block;
-	font-weight: bold;
-	background-color: #ffeb3b;
-	padding: 0.1em 0.3em;
-	margin-bottom: 0.5em;
+    display: inline-block;
+    font-weight: bold;
+    background-color: #ffeb3b;
+    padding: 0.1em 0.3em;
+    margin-bottom: 0.5em;
 }
 
 /* Row status colors (base: --color-schedule #d7f2ff) */
 tr.row-past td {
-	background-color: var(--color-schedule);
+    background-color: var(--color-schedule);
 }
 tr.row-current td {
-	background-color: #D1FFE4;
+    background-color: #d1ffe4;
 }
 tr.row-future td {
-	background-color: var(--color-schedule);
+    background-color: var(--color-schedule);
 }
 
 /* List styling */
 ul {
-	list-style: circle;
-	padding-left: 0;
+    list-style: circle;
+    padding-left: 0;
 }
 /* ul li::before {
 	content: '- ';
 } */
 ol {
-	padding-left: 1.5em;
+    padding-left: 1.5em;
 }
 ol li {
-	margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 ul ul,
 ul ol,
 ol ul,
 ol ol {
-	margin-left: -0.7em;
-	padding-left: 2.25em;
-	margin-top: 0em;
-	margin-bottom: 0.5em;
-	border-left: 1px solid rgba(0, 0, 0, 0.5);
+    margin-left: -0.7em;
+    padding-left: 2.25em;
+    margin-top: 0em;
+    margin-bottom: 0.5em;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
 }
 thead,
 tbody,
 tr {
-	display: contents;
+    display: contents;
 }
 th,
 td {
-	padding: 0.5rem 1rem;
-	border-bottom: solid 1px black !important;
-	text-align: left !important;
+    padding: 0.5rem 1rem;
+    border-bottom: solid 1px black !important;
+    text-align: left !important;
 }
 th {
-	font-weight: bold;
-	border-bottom: 1px solid #ddd;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
-	.left-column {
-		position: absolute;
-		width: 100%;
-		min-width: 100%;
-		height: 100%;
-		z-index: 20;
-		background: var(--color-menu);
-	}
-	.left-collapsed {
-		display: none !important;
-	}
-	.collapse-btn {
-		left: 0.5rem;
-	}
-	.menu-collapsed .left-column {
-		margin-left: -100%;
-		border: none;
-	}
-	.menu-collapsed .collapse-btn {
-		position: fixed;
-		top: 0.5rem;
-		left: 0.5rem;
-		right: auto;
-		transform: rotate(180deg);
-		background: var(--color-menu);
-		border: 1px solid #ccc;
-	}
-	.right-column {
-		width: 100%;
-	}
-	#content-display {
-		width: 100%;
-		max-width: 100%;
-	}
-	.menu-collapsed #content-display {
-		margin-left: 0;
-	}
-	/* Mobile schedule table - restructure to 3 rows per week */
-	.schedule-table thead {
-		display: none;
-	}
-	.schedule-table table {
-		grid-template-columns: 1fr 1fr;
-		font-size: 0.85rem;
-	}
-	.schedule-table td {
-		border-bottom: none !important;
-		padding: 0.3rem 0.5rem;
-	}
-	/* Week cell - add "Week " prefix */
-	.schedule-table tbody td:nth-child(1)::before {
-		content: 'Week ';
-		font-weight: bold;
-	}
-	/* Content cell - spans full width */
-	.schedule-table tbody td:nth-child(3) {
-		grid-column: 1 / -1;
-	}
-	/* Due cell - spans full width with prominent border */
-	.schedule-table tbody td:nth-child(4) {
-		grid-column: 1 / -1;
-		border-bottom: 1px solid black !important;
-		padding-bottom: 1rem;
-		margin-bottom: 0.5rem;
-	}
-	/* Add "Due:" label when cell has content */
-	.schedule-table tbody td:nth-child(4):not(:empty)::before {
-		content: 'Due: ';
-		font-weight: bold;
-	}
-	/* Break row - don't add "Week " prefix */
-	.schedule-table tbody tr.break-row td:nth-child(1)::before {
-		content: none;
-	}
-	th {
-		padding: 0.3rem 0.5rem;
-	}
+    .left-column {
+        position: absolute;
+        width: 100%;
+        min-width: 100%;
+        height: 100%;
+        z-index: 20;
+        background: var(--color-menu);
+    }
+    .left-collapsed {
+        display: none !important;
+    }
+    .collapse-btn {
+        left: 0.5rem;
+    }
+    .menu-collapsed .left-column {
+        margin-left: -100%;
+        border: none;
+    }
+    .menu-collapsed .collapse-btn {
+        position: fixed;
+        top: 0.5rem;
+        left: 0.5rem;
+        right: auto;
+        transform: rotate(180deg);
+        background: var(--color-menu);
+        border: 1px solid #ccc;
+    }
+    .right-column {
+        width: 100%;
+    }
+    #content-display {
+        width: 100%;
+        max-width: 100%;
+    }
+    .menu-collapsed #content-display {
+        margin-left: 0;
+    }
+    /* Mobile schedule table - restructure to 3 rows per week */
+    .schedule-table thead {
+        display: none;
+    }
+    .schedule-table table {
+        grid-template-columns: 1fr 1fr;
+        font-size: 0.85rem;
+    }
+    .schedule-table td {
+        border-bottom: none !important;
+        padding: 0.3rem 0.5rem;
+    }
+    /* Week cell - add "Week " prefix */
+    .schedule-table tbody td:nth-child(1)::before {
+        content: "Week ";
+        font-weight: bold;
+    }
+    /* Content cell - spans full width */
+    .schedule-table tbody td:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+    /* Due cell - spans full width with prominent border */
+    .schedule-table tbody td:nth-child(4) {
+        grid-column: 1 / -1;
+        border-bottom: 1px solid black !important;
+        padding-bottom: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    /* Add "Due:" label when cell has content */
+    .schedule-table tbody td:nth-child(4):not(:empty)::before {
+        content: "Due: ";
+        font-weight: bold;
+    }
+    /* Break row - don't add "Week " prefix */
+    .schedule-table tbody tr.break-row td:nth-child(1)::before {
+        content: none;
+    }
+    th {
+        padding: 0.3rem 0.5rem;
+    }
 }

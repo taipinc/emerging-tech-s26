@@ -1,5 +1,6 @@
-# Reading 1
-## Ekalan Hou (2025) Computational Photography: The Production of Perpetual Targets, Photography and Culture
+# Reading 1: Computational Photography
+
+Ekalan Hou, *Computational Photography: The Production of Perpetual Targets*
 
 <iframe src="/emerging-tech-s26/files/06-computational-photography-production-perpetual-targets.pdf" width="100%" height="800px" style="border: none;"></iframe>
 
