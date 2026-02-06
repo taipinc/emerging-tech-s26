@@ -72,10 +72,22 @@ const dynamicContent = await readContentDir('src/content');
 
 // Read and parse all week files
 const weekFiles = await readdir('src/content/weeks');
-const weeks = await Promise.all(
+
+interface WeekData {
+    order: number;
+    week: string | number;
+    date: string;
+    theme?: string;
+    status?: string;
+    contentHtml: string;
+    dueHtml: string;
+    filename: string;
+}
+
+const weeks: WeekData[] = await Promise.all(
     weekFiles
-        .filter(f => f.endsWith('.md'))
-        .map(async (filename) => {
+        .filter((f: string) => f.endsWith('.md'))
+        .map(async (filename: string) => {
             const content = await readFile(`src/content/weeks/${filename}`, 'utf-8');
             const { data, content: body } = matter(content);
 
@@ -91,12 +103,12 @@ const weeks = await Promise.all(
                 contentHtml,
                 dueHtml,
                 filename
-            };
+            } as WeekData;
         })
 );
 
 // Sort by order
-weeks.sort((a, b) => a.order - b.order);
+weeks.sort((a: WeekData, b: WeekData) => a.order - b.order);
 
 // Serialize content for client-side use
 const contentJson = JSON.stringify(dynamicContent);
@@ -118,7 +130,7 @@ const contentJson = JSON.stringify(dynamicContent);
                     </tr>
                 </thead>
                 <tbody>
-                    {weeks.map(week => (
+                    {weeks.map((week: WeekData) => (
                         <tr class={`${week.week === 'BREAK' ? 'break-row' : ''} row-${week.status || 'future'}`}>
                             <td>{week.week}</td>
                             <td>{week.date}</td>
@@ -138,7 +150,7 @@ const contentJson = JSON.stringify(dynamicContent);
         <div id="content-display" set:html={defaultHtml}></div>
     </div>
 
-    <script id="content-data" type="application/json" set:html={contentJson}></script>
+    <script is:inline id="content-data" type="application/json" set:html={contentJson}></script>
 
     <script is:inline>
         const contentData = document.getElementById('content-data');
@@ -196,6 +208,22 @@ const contentJson = JSON.stringify(dynamicContent);
             if (window.matchMedia('(max-width: 768px)').matches) {
                 document.querySelector('.container').classList.add('menu-collapsed');
             }
+        }
+
+        // Animate schedule header shadow based on scroll position
+        const scheduleDiv = document.querySelector('.schedule-table');
+        const leftCol = document.querySelector('.left-column');
+        if (scheduleDiv && leftCol) {
+            const ths = scheduleDiv.querySelectorAll('th');
+            const maxShadow = 32; // 2rem in px
+            leftCol.addEventListener('scroll', () => {
+                const tableTop = scheduleDiv.getBoundingClientRect().top;
+                const colTop = leftCol.getBoundingClientRect().top;
+                const offset = colTop - tableTop + maxShadow;
+                const clamped = Math.max(0, Math.min(offset, maxShadow));
+                const clip = clamped + 1; // +1px for border
+                ths.forEach(th => th.style.clipPath = `inset(-${clip}px 0 0 0)`);
+            });
         }
     </script>
 </MainLayout>

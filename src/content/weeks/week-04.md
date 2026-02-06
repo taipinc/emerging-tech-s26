@@ -8,9 +8,10 @@ status: future
 
 ## Content
 
-- Lecture: Images and Machine Intelligence
+- Lecture: Images and Computation
+- Reading 1 discussion
 - Workshop: Hugging Face
-- [Assignment 2: Hugging Face Report](@assignments/assignment2)
+- Assign [Assignment 2: Hugging Face Report](@assignments/assignment2)
 
 ## Due
 

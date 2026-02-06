@@ -9,9 +9,9 @@ status: future
 ## Content
 
 - Lecture (cont.): Artists and Procedures
-- Lecture: Computational Photography
-- [Workshop: Introduction to cables.gl](@workshops/workshop-cablesgl01)
-- Assign [Reading 2](@assignments/reading1)
+- Executing assignment 1 (~40 minutes)
+- [Workshop: Introduction to p5.js](@workshops/workshop-p5-01)
+- Assign [Reading 1](@assignments/reading1)
 
 ## Due
 
