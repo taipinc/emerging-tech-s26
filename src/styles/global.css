@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Freeman&family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Spline+Sans:wght@300..700&display=swap");
 
 :root {
   --color-menu: #f0f0f0;
@@ -201,8 +201,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-optical-sizing: auto;
+  font-family: "Spline Sans", sans-serif;
   font-weight: 800;
   font-style: normal;
   font-variation-settings: "wdth" 100;
