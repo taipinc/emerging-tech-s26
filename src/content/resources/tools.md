@@ -17,3 +17,7 @@ p5.js is a JavaScript library that makes it easy to create interactive graphics 
 - [OpenFrameworks](https://openframeworks.cc/) (C++ toolkit for creative coding)
 - [Three.js](https://threejs.org/) (JavaScript library for 3D graphics in the browser)
 - [cables.gl](https://cables.gl/) (web-based visual programming environment for interactive graphics and animations)
+
+**Examples and inspiration:**
+- [Constraint Systems](https://constraint.systems/)
+- [Rafaël Rozendaal](https://www.newrafael.com/internet)
