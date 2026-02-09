@@ -11,6 +11,7 @@ p5.js is a JavaScript library that makes it easy to create interactive graphics 
 **Other learning resources:**
 - [The Coding Train Website](https://thecodingtrain.com/) | [YouTube Channel](https://www.youtube.com/c/TheCodingTrain)
 - [Patt Vira YouTube Channel](https://www.youtube.com/@pattvira)
+- [Generative Design](https://www.generative-gestaltung.de/2/)
 
 **Alternative and similar tools:**
 - [Processing](https://processing.org/) (Java-based, the original inspiration for p5.js)
