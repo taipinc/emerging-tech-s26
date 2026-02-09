@@ -8,7 +8,7 @@ status: future
 
 ## Content
 
-- Lecture (cont.): Artists and Procedures
+- [Lecture (cont.): Artists and Procedures](https://taipinc.github.io/my-slides/courses/emerging-tech/s26/w02-artists&procedures/)
 - Executing assignment 1 (~40 minutes)
 - [Workshop: Introduction to p5.js](@workshops/workshop-p5-01)
 - Assign [Reading 1](@assignments/reading1)

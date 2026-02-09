@@ -57,7 +57,7 @@ function transformLinks(html: string): string {
 
 // Read menu content
 const menuMd = await readFile('src/content/menu.md', 'utf-8');
-const menuHtml = marked(menuMd);
+const menuHtml = transformLinks(await marked(menuMd));
 
 // Read default content with frontmatter support
 const defaultMd = await readFile('src/content/default.md', 'utf-8');
