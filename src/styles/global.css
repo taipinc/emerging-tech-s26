@@ -240,6 +240,64 @@ ol {
   line-height: 1;
 }
 
+/* Code blocks */
+pre {
+  background-color: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 1em;
+  overflow-x: auto;
+  margin-bottom: 1em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+pre code {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  font-size: inherit;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+code {
+  background-color: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  padding: 0.15em 0.35em;
+  font-size: 0.85em;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+}
+
+/* p5.js sketch embeds */
+.sketch-wrapper {
+  margin-bottom: 1em;
+}
+.sketch-container {
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  overflow: hidden;
+  line-height: 0;
+  margin-bottom: 0.5em;
+}
+.sketch-container canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.sketch-replay {
+  font-family: "Geist", sans-serif;
+  font-size: 0.9rem;
+  padding: 0.4em 0.8em;
+  background: var(--color-menu);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.sketch-replay:hover {
+  background: var(--color-menu-hover);
+}
+
 /* Table as CSS Grid */
 table {
   display: grid;

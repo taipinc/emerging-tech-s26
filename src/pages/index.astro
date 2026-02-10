@@ -2,10 +2,21 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import { readFile, readdir } from 'node:fs/promises';
 import { marked } from 'marked';
+import hljs from 'highlight.js';
 import matter from 'gray-matter';
 import path from 'node:path';
 
 marked.use({
+    renderer: {
+        code({ text, lang }) {
+            if (lang && hljs.getLanguage(lang)) {
+                const highlighted = hljs.highlight(text, { language: lang }).value;
+                return `<pre><code class="hljs language-${lang}">${highlighted}</code></pre>`;
+            }
+            const highlighted = hljs.highlightAuto(text).value;
+            return `<pre><code class="hljs">${highlighted}</code></pre>`;
+        }
+    },
     extensions: [{
         name: 'highlight',
         level: 'inline',
@@ -158,7 +169,71 @@ const contentJson = JSON.stringify(dynamicContent);
         const contentArea = document.getElementById('content-display');
         const defaultContent = contentArea.innerHTML;
 
+        // Track active p5 instances for cleanup
+        let activeP5Instances = [];
+
+        function destroyP5Instances() {
+            activeP5Instances.forEach(instance => instance.remove());
+            activeP5Instances = [];
+        }
+
+        function initSketches() {
+            const sketchEls = contentArea.querySelectorAll('sketch');
+            sketchEls.forEach(el => {
+                const src = el.getAttribute('src');
+                if (!src) return;
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'sketch-wrapper';
+
+                const container = document.createElement('div');
+                container.className = 'sketch-container';
+
+                const replayBtn = document.createElement('button');
+                replayBtn.className = 'sketch-replay';
+                replayBtn.textContent = '↻ Replay';
+
+                wrapper.appendChild(container);
+                wrapper.appendChild(replayBtn);
+                el.replaceWith(wrapper);
+
+                const base = document.querySelector('meta[name="base-url"]').content.replace(/\/?$/, '/');
+                const url = base + 'sketches/' + src;
+
+                let currentInstance = null;
+                let sketchCode = null;
+
+                function startSketch() {
+                    if (currentInstance) {
+                        currentInstance.remove();
+                        activeP5Instances = activeP5Instances.filter(i => i !== currentInstance);
+                    }
+                    if (sketchCode) {
+                        const sketchFn = new Function('p', sketchCode);
+                        currentInstance = new p5(sketchFn, container);
+                        activeP5Instances.push(currentInstance);
+                    }
+                }
+
+                replayBtn.addEventListener('click', () => {
+                    startSketch();
+                });
+
+                fetch(url)
+                    .then(r => r.text())
+                    .then(code => {
+                        sketchCode = code;
+                        startSketch();
+                    })
+                    .catch(err => {
+                        container.textContent = 'Failed to load sketch: ' + src;
+                        console.error(err);
+                    });
+            });
+        }
+
         function loadContent(contentKey) {
+            destroyP5Instances();
             if (!contentKey) {
                 contentArea.innerHTML = defaultContent;
             } else if (dynamicContent[contentKey]) {
@@ -168,6 +243,7 @@ const contentJson = JSON.stringify(dynamicContent);
             }
             // Scroll right panel to top
             document.querySelector('.right-column').scrollTop = 0;
+            initSketches();
         }
 
         // Handle click on content links

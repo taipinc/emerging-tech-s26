@@ -12,6 +12,7 @@
     "@astrojs/check": "^0.9.6",
     "astro": "^5.16.15",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.11.1",
     "marked": "^17.0.1",
     "typescript": "^5.9.3"
   },

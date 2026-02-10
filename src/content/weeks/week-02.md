@@ -3,7 +3,7 @@ order: 2
 week: 2
 date: 2/2
 theme: Computation & Algorithm
-status: current
+status: past
 ---
 
 ## Content
