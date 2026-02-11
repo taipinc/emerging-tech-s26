@@ -1,4 +1,4 @@
-# Workshop: p5.js
+# Workshop: Introduction to p5.js
 
 [p5.js](https://p5js.org/) is a friendly tool for learning to code and make art. p5.js prioritizes accessibility, inclusivity, community, and joy. It makes sketching with code as intuitive as sketching in a notebook. p5.js supports audio-visual, interactive, and experimental works for the web.
 
