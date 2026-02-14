@@ -13,4 +13,4 @@ status: future
 
 ## Due
 
-[Project 1 report](@assignments/project1)
+[Project 1 report](@projects/project1)

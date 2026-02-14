@@ -15,4 +15,4 @@ status: future
 
 ## Due
 
-[Reading 2](@assignments/reading2)
+[Reading 2](@readings/reading2)

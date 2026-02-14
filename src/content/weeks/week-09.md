@@ -14,4 +14,4 @@ status: future
 - [Assignment 3: Photogrammetry](@assignments/assignment3)
 
 ## Due
-[**Project 1**](@assignments/project1)
+[Project 1](@projects/project1)

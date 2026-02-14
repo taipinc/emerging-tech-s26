@@ -58,10 +58,29 @@ async function readContentDir(dir: string, basePath: string = ''): Promise<Recor
 // Transform @links to data-content attributes, external links and files to target="_blank"
 function transformLinks(html: string): string {
     return html
-        // Transform @key links to data-content
-        .replace(/<a href="@([^"]+)">/g, '<a href="#" data-content="$1">')
-        // Add target="_blank" to external links
-        .replace(/<a href="(https?:\/\/[^"]+)">/g, '<a href="$1" target="_blank" rel="noopener" class="external-link">')
+        // Transform @key links to data-content with emojis
+        .replace(/<a href="@([^"]+)">([^<]+)<\/a>/g, (match, contentKey, linkText) => {
+            const folder = contentKey.split('/')[0];
+            let emoji = '';
+
+            // Check if it's a project (either in the content key or link text)
+            if (contentKey.toLowerCase().includes('project') || linkText.toLowerCase().includes('project')) {
+                emoji = '🚀 ';
+            } else if (folder === 'workshops') {
+                emoji = '🧰 ';
+            } else if (folder === 'assignments') {
+                emoji = '🧩 ';
+            } else if (folder === 'readings') {
+                emoji = '📙 ';
+            }
+
+            return `<a href="#" data-content="${contentKey}"><span class="link-emoji">${emoji}</span>${linkText}</a>`;
+        })
+        // Add target="_blank" to external links (and emoji for lectures)
+        .replace(/<a href="(https?:\/\/[^"]+)">([^<]+)<\/a>/g, (match, url, linkText) => {
+            const emoji = linkText.trim().startsWith('Lecture') ? '<span class="link-emoji">🧑🏻‍🏫</span>' : '';
+            return `<a href="${url}" target="_blank" rel="noopener" class="external-link">${emoji}${linkText}</a>`;
+        })
         // Add target="_blank" to file links (pdf, doc, etc.)
         .replace(/<a href="([^"]+\.(pdf|doc|docx|xls|xlsx|ppt|pptx|zip))">/gi, '<a href="$1" target="_blank" rel="noopener">');
 }

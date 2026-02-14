@@ -173,6 +173,11 @@ a[data-content] {
   text-decoration: underline;
   /* text-decoration-color: #E8853A; */
 }
+.link-emoji {
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 0.25em;
+}
 a.external-link::after {
   content: "";
   display: inline-block;

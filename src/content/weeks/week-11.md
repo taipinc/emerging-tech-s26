@@ -14,9 +14,9 @@ status: future
   - NeRFs and 3DGS
   - Apple SHARP and other depth estimators
   - Bringing it all together in Spline
-- ​​Stating [Project 2: Virtual Photographic Spaces](@assignments/project2)
+- Stating [Project 2: Virtual Photographic Spaces](@projects/project2)
 - [Assignment 4: Remote Investigation](@assignments/assignment4)
 
 
 ## Due
-[Reading 3](@assignments/reading3)
+[Reading 3](@readings/reading3)

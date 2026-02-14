@@ -10,4 +10,4 @@ status: future
 
 ## Due
 
-**Project 2**
+[Project 2](@projects/project2)

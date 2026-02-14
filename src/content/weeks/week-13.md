@@ -12,5 +12,5 @@ status: future
 - Workshop: User interaction in Spline
 
 ## Due
-[Reading 4](@assignments/reading4)<br>
+[Reading 4](@readings/reading4)<br>
 [Project 2 report](@assignments/project-report2)

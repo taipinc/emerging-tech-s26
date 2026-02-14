@@ -11,7 +11,7 @@ status: current
 - [Lecture (cont.): Artists and Procedures](https://taipinc.github.io/my-slides/courses/emerging-tech/s26/w02-artists&procedures/)
 - ~Executing assignment 1~
 - [Workshop: Introduction to p5.js](@workshops/workshop-p5-01)
-- Assign [Reading 1](@assignments/reading1)
+- Assign [Reading 1](@readings/reading1)
 
 ## Due
 
