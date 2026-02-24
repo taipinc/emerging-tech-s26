@@ -2,17 +2,17 @@
 order: 7
 week: 6
 date: 3/9
-theme: Infrastructure
+theme: Generative Images (Output Layer)
 status: future
 ---
 
 ## Content
 
-- Lecture: Datasets, and other impacts
-- Students' presentations on Project 1 plans
-- Workshop: p5.js + VS Code
-- Workshop: the CLI
+- Lecture: Art & Generative AI?
+- [Workshop: p5.js + ml5.js](@workshops/workshop-p5
+- Assign [Reading 2](@readings/reading2)
+- Stating [Project 1: Interactive Camera](@projects/project1)
 
 ## Due
 
-[Reading 2](@readings/reading2)
+[Assignment 2](@assignments/assignment2)

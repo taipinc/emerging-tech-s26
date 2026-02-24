@@ -2,17 +2,19 @@
 order: 6
 week: 5
 date: 3/2
-theme: Generative Images (Output Layer)
+theme: Operational Images (Input Layer)
 status: future
 ---
 
 ## Content
 
-- Art & Generative AI?
-- Workshop: p5.js + ml5.js
-- Assign [Reading 2](@readings/reading2)
-- Stating [Project 1: Interactive Camera](@projects/project1)
+- Looking at assignment 1
+- Lecture: Images and Computation
+- Reading 1 discussion
+- [Workshop: Hugging Face](@workshops/workshop-hugging-face)
+- [Workshop: p5.js part II](@workshops/workshop-p5-02)
+- Assign [Assignment 2: Hugging Face Report](@assignments/assignment2)
 
 ## Due
 
-[Assignment 2](@assignments/assignment2)
+[Reading 1](@readings/reading1)

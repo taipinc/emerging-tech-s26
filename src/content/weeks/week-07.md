@@ -2,15 +2,18 @@
 order: 9
 week: 7
 date: 3/23
-theme: Generative AI Project Tools
+theme: Infrastructure
 status: future
 ---
 
 ## Content
 
-- Workshop: GitHub (templates, deployment)
-- "Vibe Coding" (w/ Goole Gemini and Antigravity)
+- Lecture: Datasets, and other impacts
+- Students' presentations on Project 1 plans
+- Workshop: p5.js + VS Code
+- Workshop: the CLI
 
 ## Due
 
-[Project 1 report](@projects/project1)
+[Project 1 report](@projects/project1)<br>
+[Reading 2](@readings/reading2)
