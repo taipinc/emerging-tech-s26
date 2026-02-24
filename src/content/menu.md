@@ -2,7 +2,7 @@
 
   <h1 class="no-space site-title">Photo Processes: Emerging Technologies</h1>
 
-  <h3 class="no-space">Spring 2026 / Shabtai Pinchevsky</h2>
+  <h3 class="no-space">Spring 2026 / Shabtai Pinchevsky</h3>
 
 <br>
 
