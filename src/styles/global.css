@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Spline+Sans:wght@300..700&display=swap");
+@import url("https://use.typekit.net/zlr0uca.css");
 
 :root {
   --color-menu: #f0f0f0;
@@ -13,7 +14,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Geist", sans-serif;
+  font-family: "neue-haas-grotesk-text", sans-serif;
   height: 100vh;
   overflow: hidden;
   font-size: 1.2rem;
@@ -55,6 +56,7 @@ body {
   justify-content: start;
   z-index: 90;
   background: var(--color-menu);
+  border-right: 1px solid #ddd;
 }
 .menu-collapsed .left-column {
   margin-left: calc(-50% + 3rem);
@@ -103,7 +105,7 @@ body {
   padding: 2rem;
   padding-bottom: 4rem;
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   align-items: flex-start;
   background: var(--color-content);
 }
@@ -303,13 +305,15 @@ code {
   background: var(--color-menu-hover);
 }
 
-/* Table as CSS Grid */
+/* Table base */
 table {
-  display: grid;
   width: 100%;
   font-size: 1rem;
 }
+
+/* Schedule table as CSS Grid */
 .schedule-table table {
+  display: grid;
   grid-template-columns: auto auto 1fr auto;
   background-color: var(--color-schedule);
   border-top: solid 1px black !important;
@@ -338,7 +342,7 @@ tr.row-future td {
 /* List styling */
 ul {
   list-style: circle;
-  padding-left: 0;
+  padding-left: 1.5em;
 }
 /* ul li::before {
 	content: '- ';
@@ -359,9 +363,9 @@ ol ol {
   margin-bottom: 0.5em;
   border-left: 1px solid rgba(0, 0, 0, 0.5);
 }
-thead,
-tbody,
-tr {
+.schedule-table thead,
+.schedule-table tbody,
+.schedule-table tr {
   display: contents;
 }
 th,
