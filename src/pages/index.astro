@@ -55,9 +55,16 @@ async function readContentDir(dir: string, basePath: string = ''): Promise<Recor
     return content;
 }
 
+const BASE = '/emerging-tech-s26';
+
 // Transform @links to data-content attributes, external links and files to target="_blank"
 function transformLinks(html: string): string {
     return html
+        // Fix root-relative image src paths to include the base path
+        .replace(/<img([^>]*) src="(\/[^"]+)"([^>]*)>/g, (match, before, src, after) => {
+            if (src.startsWith(BASE)) return match;
+            return `<img${before} src="${BASE}${src}"${after}>`;
+        })
         // Transform @key links to data-content with emojis
         .replace(/<a href="@([^"]+)">([^<]+)<\/a>/g, (match, contentKey, linkText) => {
             const folder = contentKey.split('/')[0];
