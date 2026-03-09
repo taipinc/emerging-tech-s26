@@ -79,8 +79,9 @@ function transformLinks(html: string): string {
                 emoji = '🧩 ';
             } else if (folder === 'readings') {
                 emoji = '📙 ';
+            } else if (folder === 'presentations') {
+                emoji = '🖼️ ';
             }
-
             return `<a href="#" data-content="${contentKey}"><span class="link-emoji">${emoji}</span>${linkText}</a>`;
         })
         // Add target="_blank" to external links (and emoji for lectures)
