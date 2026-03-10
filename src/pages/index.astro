@@ -148,6 +148,64 @@ const weeks: WeekData[] = await Promise.all(
 // Sort by order
 weeks.sort((a: WeekData, b: WeekData) => a.order - b.order);
 
+// --- Collect content items for the tab panels ---
+interface ContentItem {
+    title: string;
+    key?: string;
+    url?: string;
+}
+
+async function getContentItems(dir: string): Promise<ContentItem[]> {
+    try {
+        const files = await readdir(`src/content/${dir}`);
+        const items: ContentItem[] = await Promise.all(
+            files.filter((f: string) => f.endsWith('.md')).sort().map(async (f: string) => {
+                const raw = await readFile(`src/content/${dir}/${f}`, 'utf-8');
+                const { content: body } = matter(raw);
+                const titleMatch = body.match(/^#\s+(.+)/m);
+                return {
+                    title: titleMatch ? titleMatch[1] : f.replace('.md', ''),
+                    key: `${dir}/${f.replace('.md', '')}`,
+                };
+            })
+        );
+        return items;
+    } catch {
+        return [];
+    }
+}
+
+const tabs: { id: string; label: string; emoji: string; items: ContentItem[] }[] = [
+    { id: 'assignments', label: 'Assignments', emoji: '🧩', items: await getContentItems('assignments') },
+    { id: 'readings', label: 'Readings', emoji: '📙', items: await getContentItems('readings') },
+    { id: 'projects', label: 'Projects', emoji: '🚀', items: await getContentItems('projects') },
+    { id: 'presentations', label: 'Presentations', emoji: '🖼️', items: await getContentItems('presentations') },
+    { id: 'workshops', label: 'Workshops', emoji: '🧰', items: await getContentItems('workshops') },
+];
+
+// Extract lectures from week files
+const lectureItems: ContentItem[] = [];
+for (const week of weeks) {
+    const weekContent = await readFile(`src/content/weeks/${week.filename}`, 'utf-8');
+    const { content: body } = matter(weekContent);
+    const contentSection = body.match(/## Content\s*([\s\S]*?)(?=## Due|$)/);
+    if (contentSection) {
+        const lines = contentSection[1].split('\n');
+        for (const line of lines) {
+            const linkedMatch = line.match(/\[Lecture:\s*(.+?)\]\((.+?)\)/);
+            if (linkedMatch) {
+                lectureItems.push({ title: `Lecture: ${linkedMatch[1].trim()}`, url: linkedMatch[2] });
+            } else {
+                const unlinkedMatch = line.match(/(?:^|\-\s*)Lecture:\s*(.+)/);
+                if (unlinkedMatch) {
+                    lectureItems.push({ title: `Lecture: ${unlinkedMatch[1].trim()}` });
+                }
+            }
+        }
+    }
+}
+tabs.push({ id: 'lectures', label: 'Lectures', emoji: '🧑🏻‍🏫', items: lectureItems });
+
 // Serialize content for client-side use
 const contentJson = JSON.stringify(dynamicContent);
 ---
@@ -155,6 +213,33 @@ const contentJson = JSON.stringify(dynamicContent);
 <MainLayout>
     <div slot="left">
         <Fragment set:html={menuHtml} />
+        <h2>Content</h2>
+        <div class="content-tabs">
+            <div class="tab-buttons">
+                {tabs.map(tab => (
+                    <button class="tab-btn" data-tab={tab.id}>
+                        <span class="link-emoji">{tab.emoji}</span>{tab.label}
+                    </button>
+                ))}
+            </div>
+            {tabs.map(tab => (
+                <div class="tab-panel" id={`tab-${tab.id}`} hidden>
+                    <ul>
+                        {tab.items.map(item => (
+                            <li>
+                                {item.key ? (
+                                    <a href="#" data-content={item.key}>{item.title}</a>
+                                ) : item.url ? (
+                                    <a href={item.url} target="_blank" rel="noopener" class="external-link">{item.title}</a>
+                                ) : (
+                                    <span class="lecture-upcoming">{item.title}</span>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
 
         <h2>Schedule</h2>
         <div class="schedule-table">
@@ -312,6 +397,25 @@ const contentJson = JSON.stringify(dynamicContent);
                 document.querySelector('.container').classList.add('menu-collapsed');
             }
         }
+
+        // Tab toggle behavior
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.dataset.tab;
+                const panel = document.getElementById('tab-' + tabId);
+                const isOpen = !panel.hidden;
+
+                // Close all panels and deactivate all buttons
+                document.querySelectorAll('.tab-panel').forEach(p => p.hidden = true);
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+                // If it wasn't open, open it
+                if (!isOpen) {
+                    panel.hidden = false;
+                    btn.classList.add('active');
+                }
+            });
+        });
 
         // Animate schedule header shadow based on scroll position
         const scheduleDiv = document.querySelector('.schedule-table');

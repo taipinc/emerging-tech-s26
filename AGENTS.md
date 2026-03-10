@@ -97,6 +97,7 @@ Internal link emoji prefixes (applied automatically by `transformLinks()`):
 - `@assignments/...` → 🧩
 - `@readings/...` → 📙
 - `@projects/...` → 🚀
+- `@presentations/...` → 🖼️
 
 ---
 
