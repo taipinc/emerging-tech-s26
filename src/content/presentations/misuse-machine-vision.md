@@ -15,6 +15,7 @@
 
 - ﻿Bjørn Karmann - [Paragraphica](https://bjoernkarmann.dk/)
 - Memo Akten - [Learning to See](https://www.memo.tv/works/learning-to-see/)
+- Philipp Schmitt - [Camera Restricta](https://philippschmitt.com/archive/2018/work/camera-restricta.html)
 - [Poetry Camera](https://poetry.camera/)
 - [Traffic Jam](https://www.youtube.com/watch?v=p5Aiyq3WT10&t=228s)
 - Daniel Temkin, [Straightened Trees](https://danieltemkin.com/StraightenedTrees)
