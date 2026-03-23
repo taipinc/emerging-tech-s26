@@ -8,11 +8,9 @@ status: current
 
 ## Content
 
-- Lecture: Datasets, and other impacts
-- Students' presentations on Project 1 plans
+- [Lecture: Infrastructure of Machine Vision](https://taipinc.github.io/my-slides/courses/emerging-tech/s26/w07-infrastructure/)
 - [Workshop: p5.js + ml5.js](@workshops/workshop-p5-ml) cont.
 - Workshop: p5.js + VS Code
-- Workshop: the CLI
 
 ## Due
 
