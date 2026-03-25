@@ -161,7 +161,7 @@ img {
 }
 iframe {
   width: 100%;
-  min-height: 800px;
+  aspect-ratio: 16 / 9;
   border: none;
 }
 a {
