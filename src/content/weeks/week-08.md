@@ -8,8 +8,7 @@ status: future
 
 ## Content
 
-- Workshop: GitHub (templates, deployment)
-- "Vibe Coding" (w/ Goole Gemini and Antigravity)
+- [Workshop: Agentic (AI) Coding (w/ Google Gemini](@workshops/workshop-agentic-coding)
 - *Zoom on-call project support throughout the rest of the week*
 
 ## Due
