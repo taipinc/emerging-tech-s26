@@ -8,15 +8,15 @@ status: future
 
 ## Content
 
-- Lecture: From Photogrammetry to Neural Rendering
+- Lecture: Remote Sensing and Remote Control
+- Workshop: Exploring remote sensing datasets
 - Workshops:
-  - iPhone scanning apps
-  - NeRFs and 3DGS
-  - Apple SHARP and other depth estimators
-  - Bringing it all together in Spline
+  - Depth Anything
+  - Spline
 - Stating [Project 2: Virtual Photographic Spaces](@projects/project2)
 - [Assignment 4: Remote Investigation](@assignments/assignment4)
 
 
 ## Due
+[Assignment 3](@assignments/assignment3) <br/>
 [Reading 3](@readings/reading3)

@@ -8,9 +8,7 @@ status: future
 
 ## Content
 
-- Lecture: Exploring and Documenting Virtual Worlds
-- Students' presentation on Project 2 plans
-- Workshop: Exploring and recording virtual worlds
+- Lecture: World Building as Artistic Practice
 - Workshop: Spline
 
 ## Due

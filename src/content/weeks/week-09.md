@@ -9,9 +9,7 @@ status: future
 ## Content
 
 - Presentation for Project 1
-- Lecture: Volumetric Photography
-- Workshop: Photogrammetry, LiDAR
-- [Assignment 3: Photogrammetry](@assignments/assignment3)
+- 1:00pm: [Doc Talk: Specular Fiction and The Upper Room with Coleman Collins](https://event.newschool.edu/doctalkspecularfictionandtheup)
 
 ## Due
 [Project 1](@projects/project1)

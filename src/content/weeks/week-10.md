@@ -8,8 +8,11 @@ status: future
 
 ## Content
 
-- Lecture: Remote Sensing and Remote Control
-- Workshop: Exploring remote sensing datasets
+- Lecture: Volumentic Imaging
+- Workshop: Photogrammetry, LiDAR
+  - iPhone scanning apps
+  - NeRFs and 3DGS
+- [Assignment 3: Photogrammetry](@assignments/assignment3)
+
 
 ## Due
-[Assignment 3](@assignments/assignment3)
