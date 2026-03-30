@@ -3,7 +3,7 @@ order: 9
 week: 7
 date: 3/23
 theme: Infrastructure
-status: current
+status: past
 ---
 
 ## Content

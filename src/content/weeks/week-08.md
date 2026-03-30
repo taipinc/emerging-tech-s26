@@ -3,12 +3,12 @@ order: 10
 week: 8
 date: 3/30
 theme: Generative AI Tools
-status: future
+status: current
 ---
 
 ## Content
 
 - [Workshop: Agentic (AI) Coding (w/ Google Gemini](@workshops/workshop-agentic-coding)
-- *Zoom on-call project support throughout the rest of the week*
+- [**Schedule a Zoom meeting with me for Friday**](https://calendar.app.google/79QfeDXLQtrrvEeF7), 10am-12pm & 4-5pm
 
 ## Due
