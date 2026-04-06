@@ -3,7 +3,7 @@ order: 10
 week: 8
 date: 3/30
 theme: Generative AI Tools
-status: current
+status: past
 ---
 
 ## Content

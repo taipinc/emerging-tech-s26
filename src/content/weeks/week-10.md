@@ -16,3 +16,4 @@ status: future
 
 
 ## Due
+[Reading 3](@readings/reading3)

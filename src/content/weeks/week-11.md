@@ -19,4 +19,3 @@ status: future
 
 ## Due
 [Assignment 3](@assignments/assignment3) <br/>
-[Reading 3](@readings/reading3)
