@@ -9,10 +9,11 @@ status: future
 ## Content
 
 - Lecture: Volumentic Imaging
+- [Reading 3](@readings/reading3) discussion
 - Workshop: Photogrammetry, LiDAR
   - iPhone scanning apps
   - NeRFs and 3DGS
-- [Assignment 3: Photogrammetry](@assignments/assignment3)
+- Class activity: [Assignment 3: Photogrammetry](@assignments/assignment3)
 
 
 ## Due
