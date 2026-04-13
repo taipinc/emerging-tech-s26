@@ -1,7 +1,7 @@
 ---
 order: 17
 week: 15
-date: 5/13-14?
+date: 5/13
 theme: Final Presentations
 status: future
 ---

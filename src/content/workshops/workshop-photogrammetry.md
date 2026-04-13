@@ -3,6 +3,7 @@
 In this workshop, we will explore photogrammetry, a technique that allows us to create 3D models from photographs. We will use a series of apps and tools to capture and process images.
 
 Mobile Apps:
+- RealityScan Mobile ([iOS](https://apps.apple.com/us/app/realityscan-mobile/id1584832280), [Android](https://play.google.com/store/apps/details?id=com.epicgames.realityscan))
 - Scaniverse ([iOS](https://apps.apple.com/us/app/scaniverse-3d-scanner/id1541433223), [Android](https://play.google.com/store/search?q=Scaniverse&c=apps&hl=en_US))
 - KIRI Engine ([iOS](https://apps.apple.com/us/app/kiri-engine-3d-scanner-lidar/id1577127142), [Android](https://play.google.com/store/apps/details?id=com.kiriengine.app))
 - Polycam ([iOS](https://apps.apple.com/us/app/polycam-3d-scans-floor-plans/id1532482376), [Android](https://play.google.com/store/apps/details?id=ai.polycam))
@@ -44,3 +45,9 @@ If you want your model to connect several rooms, you need to have a buffer betwe
 Capture the two rooms as any other single interior room. Then capture the doorway or opening between them, as if it was an object – meaning, from many different sides.
 
 ![photogrammetry - interior multiple rooms](/images/photogram4-700xauto.jpg)
+
+---
+
+## Resources:
+
+- [A Field Guide To Gaussian Splatting](https://rd.nytimes.com/projects/gaussian-splatting-guide/), NYT R&D
