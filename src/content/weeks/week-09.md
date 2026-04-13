@@ -3,7 +3,7 @@ order: 11
 week: 9
 date: 4/6
 theme: Volumetric Photography
-status: current
+status: past
 ---
 
 ## Content

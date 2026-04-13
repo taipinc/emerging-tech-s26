@@ -1,6 +1,6 @@
 # Assignment 3: Photogrammetry
 
-Create 3 photogrammetric scans by choosing from the prompt categories below. You may choose 3 from the same category or mix across categories. Each scan should be accompanied by brief documentation (a few sentences) explaining your choice and what you learned from the process.
+Create 3 photogrammetric scans by choosing from the categories below. You may choose 3 from the same category or mix across categories.
 
 ### Personal/Biographical
 Scan something meaningful to you:
@@ -19,6 +19,3 @@ Scan something that photogrammetry struggles with:
 - Very dark or very bright materials
 - Fine details (hair, fabric texture, plants)
 - Extreme scales (too tiny or too large)
-
-
-

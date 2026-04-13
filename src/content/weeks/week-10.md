@@ -3,16 +3,14 @@ order: 12
 week: 10
 date: 4/13
 theme: The Virtual and the Real
-status: future
+status: current
 ---
 
 ## Content
 
 - Lecture: Volumentic Imaging
 - [Reading 3](@readings/reading3) discussion
-- Workshop: Photogrammetry, LiDAR
-  - iPhone scanning apps
-  - NeRFs and 3DGS
+- [Workshop: Photogrammetry](@workshops/workshop-photogrammetry)
 - Class activity: [Assignment 3: Photogrammetry](@assignments/assignment3)
 
 
