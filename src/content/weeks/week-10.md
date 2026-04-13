@@ -8,7 +8,7 @@ status: current
 
 ## Content
 
-- Lecture: Volumentic Imaging
+- [Lecture: Volumentic Imaging](https://taipinc.github.io/my-slides/courses/emerging-tech/s26/w10-volumetric-images)
 - [Reading 3](@readings/reading3) discussion
 - [Workshop: Photogrammetry](@workshops/workshop-photogrammetry)
 - Class activity: [Assignment 3: Photogrammetry](@assignments/assignment3)
